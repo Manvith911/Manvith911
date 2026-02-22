@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manvith — Dev Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700;800&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080b10;
+    --bg2: #0d1117;
+    --card: #0f1621;
+    --border: #1e2d40;
+    --accent: #00ffe0;
+    --accent2: #ff6b35;
+    --accent3: #7c5cfc;
+    --text: #cdd9e5;
+    --muted: #4a5568;
+    --glow: 0 0 20px rgba(0,255,224,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* GRID BACKGROUND */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,224,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,224,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* SCANLINE */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.05) 2px,
+      rgba(0,0,0,0.05) 4px
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ========= HEADER ========= */
+  .header {
+    text-align: center;
+    margin-bottom: 64px;
+    animation: fadeSlideDown 0.8s ease both;
+  }
+
+  .terminal-bar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px 10px 0 0;
+    padding: 10px 20px;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 0;
+  }
+
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot.r { background: #ff5f57; }
+  .dot.y { background: #febc2e; }
+  .dot.g { background: #28c840; }
+
+  .terminal-body {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    padding: 40px 32px;
+    text-align: left;
+    box-shadow: var(--glow), 0 40px 80px rgba(0,0,0,0.5);
+  }
+
+  .prompt {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .prompt span { color: var(--accent); }
+
+  .ascii-name {
+    font-size: clamp(9px, 1.8vw, 14px);
+    line-height: 1.2;
+    color: var(--accent);
+    text-shadow: 0 0 20px rgba(0,255,224,0.4);
+    white-space: pre;
+    letter-spacing: 0;
+    animation: glowPulse 3s ease-in-out infinite;
+  }
+
+  @keyframes glowPulse {
+    0%, 100% { text-shadow: 0 0 20px rgba(0,255,224,0.4); }
+    50% { text-shadow: 0 0 40px rgba(0,255,224,0.8), 0 0 80px rgba(0,255,224,0.3); }
+  }
+
+  .tagline {
+    margin-top: 24px;
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--accent);
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+    margin-left: 4px;
+  }
+
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+  /* TYPE ANIMATION */
+  .typed-text { color: var(--text); }
+
+  /* ========= SECTION TITLES ========= */
+  .section {
+    margin-bottom: 48px;
+    animation: fadeSlideUp 0.7s ease both;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-title::before {
+    content: '//';
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--border), transparent);
+  }
+
+  /* ========= CODE BLOCK ========= */
+  .code-block {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px;
+    font-size: 13px;
+    line-height: 2;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .code-block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--accent), var(--accent3), var(--accent2));
+  }
+
+  .kw { color: var(--accent3); }
+  .fn { color: #61afef; }
+  .str { color: #98c379; }
+  .key { color: var(--accent); }
+  .arr { color: var(--accent2); }
+  .cm { color: var(--muted); font-style: italic; }
+  .num { color: #d19a66; }
+
+  /* ========= TECH STACK ========= */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+
+  .tech-chip {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.25s ease;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tech-chip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent, rgba(0,255,224,0.04));
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  .tech-chip:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,255,224,0.1);
+  }
+
+  .tech-chip:hover::before { opacity: 1; }
+
+  .tech-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  /* ========= PROJECT CARD ========= */
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,255,224,0.03) 0%, transparent 60%);
+  }
+
+  .project-card:hover {
+    border-color: rgba(0,255,224,0.4);
+    box-shadow: var(--glow), 0 20px 60px rgba(0,0,0,0.3);
+    transform: translateY(-3px);
+  }
+
+  .project-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  .project-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.5px;
+  }
+
+  .live-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0,255,224,0.08);
+    border: 1px solid rgba(0,255,224,0.3);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 1px;
+  }
+
+  .live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: livePulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes livePulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(0,255,224,0.4); }
+    50% { box-shadow: 0 0 0 6px rgba(0,255,224,0); }
+  }
+
+  .project-desc {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .project-url {
+    font-size: 12px;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+
+  .project-url:hover { text-decoration: underline; }
+
+  .project-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+
+  .tag {
+    background: rgba(124,92,252,0.1);
+    border: 1px solid rgba(124,92,252,0.3);
+    color: var(--accent3);
+    border-radius: 4px;
+    padding: 3px 10px;
+    font-size: 11px;
+  }
+
+  /* ========= STATS ========= */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .stat-card img {
+    width: 100%;
+    display: block;
+  }
+
+  .stat-card.full { grid-column: 1 / -1; }
+
+  /* ========= FOOTER ========= */
+  .footer {
+    text-align: center;
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    font-size: 11px;
+    color: var(--muted);
+    animation: fadeSlideUp 1s ease 0.8s both;
+  }
+
+  .footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .contact-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 12px;
+    color: var(--text);
+    text-decoration: none;
+    transition: all 0.25s;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .contact-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: 0 0 20px rgba(0,255,224,0.1);
+    transform: translateY(-1px);
+  }
+
+  /* ========= ANIMATIONS ========= */
+  @keyframes fadeSlideDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section:nth-child(1) { animation-delay: 0.1s; }
+  .section:nth-child(2) { animation-delay: 0.2s; }
+  .section:nth-child(3) { animation-delay: 0.3s; }
+  .section:nth-child(4) { animation-delay: 0.4s; }
+  .section:nth-child(5) { animation-delay: 0.5s; }
+
+  /* FLOATING PARTICLES */
+  .particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: float linear infinite;
+    opacity: 0;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.3; }
+    100% { transform: translateY(-10vh) translateX(30px); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Floating particles -->
+<div class="particles" id="particles"></div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="terminal-bar">
+      <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+      <span style="margin-left:8px;">~/manvith — zsh</span>
+    </div>
+    <div class="terminal-body">
+      <div class="prompt"><span>manvith@dev</span>:~$ <span style="color:var(--text)">cat profile.ts</span></div>
+      <pre class="ascii-name">
+███╗   ███╗ █████╗ ███╗   ██╗██╗   ██╗██╗████████╗██╗  ██╗
+████╗ ████║██╔══██╗████╗  ██║██║   ██║██║╚══██╔══╝██║  ██║
+██╔████╔██║███████║██╔██╗ ██║██║   ██║██║   ██║   ███████║
+██║╚██╔╝██║██╔══██║██║╚██╗██║╚██╗ ██╔╝██║   ██║   ██╔══██║
+██║ ╚═╝ ██║██║  ██║██║ ╚████║ ╚████╔╝ ██║   ██║   ██║  ██║
+╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝  ╚═══╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝</pre>
+      <div class="tagline">
+        <span style="color:var(--accent)">›</span>
+        <span class="typed-text" id="typed"></span><span class="cursor"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section">
+    <div class="section-title">about</div>
+    <div class="code-block">
+<span class="kw">const</span> <span class="fn">manvith</span> = {<br>
+&nbsp;&nbsp;<span class="key">role</span>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"Full Stack Developer"</span>,<br>
+&nbsp;&nbsp;<span class="key">location</span>:&nbsp;&nbsp;&nbsp;<span class="str">"India 🇮🇳"</span>,<br>
+&nbsp;&nbsp;<span class="key">building</span>:&nbsp;&nbsp;&nbsp;<span class="str">"animerealm.in"</span>&nbsp;&nbsp;<span class="cm">// Anime · Manga · Movies</span><br>
+&nbsp;&nbsp;<span class="key">stack</span>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<span class="arr">"React"</span>, <span class="arr">"Next.js"</span>, <span class="arr">"TypeScript"</span>, <span class="arr">"Node.js"</span>, <span class="arr">"Supabase"</span>],<br>
+&nbsp;&nbsp;<span class="key">hobbies</span>:&nbsp;&nbsp;&nbsp;&nbsp;[<span class="arr">"Anime"</span>, <span class="arr">"Open Source"</span>, <span class="arr">"Building things"</span>],<br>
+&nbsp;&nbsp;<span class="key">available</span>:&nbsp;&nbsp;<span class="kw">true</span>,&nbsp;&nbsp;&nbsp;<span class="cm">// open to collabs 👀</span><br>
+};
+    </div>
+  </div>
+
+  <!-- PROJECT -->
+  <div class="section">
+    <div class="section-title">current project</div>
+    <div class="project-card">
+      <div class="project-header">
+        <div>
+          <div style="font-size:11px;color:var(--muted);letter-spacing:2px;margin-bottom:6px;">FEATURED BUILD</div>
+          <div class="project-name">AnimeRealm 🎌</div>
+        </div>
+        <div class="live-badge"><div class="live-dot"></div>LIVE</div>
+      </div>
+      <div class="project-desc">
+        A full-featured platform for Anime, Manga & Movie discovery.<br>
+        Built with Next.js + TypeScript, powered by Supabase.
+      </div>
+      <a class="project-url" href="https://animerealm.in" target="_blank">→ animerealm.in</a>
+      <div class="project-tags">
+        <span class="tag">Next.js</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Supabase</span>
+        <span class="tag">Vercel</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TECH -->
+  <div class="section">
+    <div class="section-title">tech stack</div>
+    <div class="tech-grid">
+      <div class="tech-chip"><div class="tech-icon">🟨</div>JavaScript</div>
+      <div class="tech-chip"><div class="tech-icon">🔷</div>TypeScript</div>
+      <div class="tech-chip"><div class="tech-icon">⚛️</div>React</div>
+      <div class="tech-chip"><div class="tech-icon">▲</div>Next.js</div>
+      <div class="tech-chip"><div class="tech-icon">🟢</div>Node.js</div>
+      <div class="tech-chip"><div class="tech-icon">⚡</div>Vite</div>
+      <div class="tech-chip"><div class="tech-icon">🟩</div>Supabase</div>
+      <div class="tech-chip"><div class="tech-icon">◼</div>Vercel</div>
+      <div class="tech-chip"><div class="tech-icon">🔴</div>Git</div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="section">
+    <div class="section-title">github stats</div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <img src="https://github-readme-stats.vercel.app/api?username=Manvith911&theme=tokyonight&hide_border=true&show_icons=true&bg_color=0f1621&title_color=00ffe0&icon_color=7c5cfc&text_color=cdd9e5" alt="Stats" />
+      </div>
+      <div class="stat-card">
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Manvith911&theme=tokyonight&hide_border=true&layout=compact&bg_color=0f1621&title_color=00ffe0&text_color=cdd9e5" alt="Languages" />
+      </div>
+      <div class="stat-card full">
+        <img src="https://nirzak-streak-stats.vercel.app/?user=Manvith911&theme=tokyonight&hide_border=true&background=0f1621&ring=00ffe0&fire=ff6b35&currStreakLabel=00ffe0" alt="Streak" />
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="contact-row">
+      <a class="contact-btn" href="mailto:manvithudupa073@gmail.com">
+        📧 manvithudupa073@gmail.com
+      </a>
+      <a class="contact-btn" href="https://animerealm.in" target="_blank">
+        🌐 animerealm.in
+      </a>
+      <a class="contact-btn" href="https://github.com/Manvith911" target="_blank">
+        🐙 Manvith911
+      </a>
+    </div>
+    <div style="margin-top:24px;">
+      <img src="https://visitcount.itsvg.in/api?id=Manvith911&label=visitors&color=6&icon=5&pretty=true" alt="visitors" />
+    </div>
+    <div style="margin-top:20px; font-size:10px; letter-spacing:2px;">
+      BUILT WITH ☕ + TOO MANY ANIME EPISODES
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Particles
+  const pc = document.getElementById('particles');
+  for (let i = 0; i < 25; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.cssText = `
+      left: ${Math.random() * 100}%;
+      animation-duration: ${8 + Math.random() * 12}s;
+      animation-delay: ${Math.random() * 10}s;
+      opacity: 0;
+      width: ${Math.random() > 0.7 ? 3 : 2}px;
+      height: ${Math.random() > 0.7 ? 3 : 2}px;
+    `;
+    pc.appendChild(p);
+  }
+
+  // Typing animation
+  const lines = [
+    "Full Stack Developer 🚀",
+    "Building AnimRealm.in 🎌",
+    "React · Next.js · TypeScript",
+    "Open to collabs 👀",
+  ];
+  let lineIdx = 0, charIdx = 0, deleting = false;
+  const el = document.getElementById('typed');
+
+  function type() {
+    const current = lines[lineIdx];
+    if (!deleting) {
+      el.textContent = current.slice(0, ++charIdx);
+      if (charIdx === current.length) {
+        deleting = true;
+        setTimeout(type, 2200);
+        return;
+      }
+    } else {
+      el.textContent = current.slice(0, --charIdx);
+      if (charIdx === 0) {
+        deleting = false;
+        lineIdx = (lineIdx + 1) % lines.length;
+      }
+    }
+    setTimeout(type, deleting ? 45 : 75);
+  }
+  type();
+</script>
+</body>
+</html>
