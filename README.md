@@ -79,14 +79,7 @@ const manvith = {
 
 <div align="center">
 
-<img height="175" src="https://github-readme-stats.vercel.app/api?username=Manvith911&theme=tokyonight&hide_border=true&show_icons=true&bg_color=0d1117&title_color=00ffe0&icon_color=7c5cfc&text_color=cdd9e5" />
-<img height="175" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Manvith911&theme=tokyonight&hide_border=true&layout=compact&bg_color=0d1117&title_color=00ffe0&text_color=cdd9e5" />
-
-</div>
-
-<div align="center">
-
-![Streak](https://streak-stats.demolab.com?user=Manvith911&theme=tokyonight&hide_border=true&background=0d1117&ring=00ffe0&fire=ff6b35&currStreakLabel=00ffe0&sideLabels=cdd9e5&dates=4a5568)
+[![GitHub Streak](https://streak-stats.demolab.com?user=Manvith911&theme=dark&hide_border=true&short_numbers=true)](https://git.io/streak-stats)
 
 </div>
 
@@ -107,9 +100,5 @@ const manvith = {
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:7c5cfc,100:00ffe0&height=100&section=footer&animation=fadeIn" />
-
-![Visitor Count](https://visitcount.itsvg.in/api?id=Manvith911&label=Profile+Views&color=6&icon=5&pretty=true)
-
-`Built with ☕ and way too many anime episodes`
 
 </div>
