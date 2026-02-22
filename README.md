@@ -8,13 +8,13 @@
 
 ---
 
-## `$ cat about.ts`
+## `About Me`
 
 ```typescript
 const manvith = {
-  role      : "Full Stack Developer",
+  role      : "Full Stack Developer/Student",
   location  : "India 🇮🇳",
-  building  : "animerealm.in",  // Anime · Manga · Movies 🎌
+  building  : "animerealm.in",  // Anime 🎌
   stack     : ["React", "Next.js", "TypeScript", "Node.js", "Supabase"],
   hobbies   : ["Anime", "Open Source", "Building cool stuff"],
   available : true,             // open to collabs 👀
