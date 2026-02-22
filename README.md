@@ -1,6 +1,26 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ffe0,100:7c5cfc&height=200&section=header&text=Manvith&fontSize=80&fontColor=ffffff&fontAlignY=38&desc=Full%20Stack%20Developer%20%F0%9F%9A%80&descAlignY=58&descSize=18&animation=fadeIn" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ffe0,100:7c5cfc&height=160&section=header&animation=fadeIn" />
+
+</div>
+
+```
+ ███╗   ███╗ █████╗ ███╗   ██╗██╗   ██╗██╗████████╗██╗  ██╗
+ ████╗ ████║██╔══██╗████╗  ██║██║   ██║██║╚══██╔══╝██║  ██║
+ ██╔████╔██║███████║██╔██╗ ██║██║   ██║██║   ██║   ███████║
+ ██║╚██╔╝██║██╔══██║██║╚██╗██║╚██╗ ██╔╝██║   ██║   ██╔══██║
+ ██║ ╚═╝ ██║██║  ██║██║ ╚████║ ╚████╔╝ ██║   ██║   ██║  ██║
+ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝  ╚═══╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝
+
+ ██╗   ██╗██████╗ ██╗   ██╗██████╗  █████╗
+ ██║   ██║██╔══██╗██║   ██║██╔══██╗██╔══██╗
+ ██║   ██║██║  ██║██║   ██║██████╔╝███████║
+ ██║   ██║██║  ██║██║   ██║██╔═══╝ ██╔══██║
+ ╚██████╔╝██████╔╝╚██████╔╝██║     ██║  ██║
+  ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝  ╚═╝
+```
+
+<div align="center">
 
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=800&color=00FFE0&center=true&vCenter=true&width=600&lines=Building+AnimeRealm+%F0%9F%8E%8C;Full+Stack+Developer+%F0%9F%9A%80;React+%E2%80%A2+Next.js+%E2%80%A2+TypeScript;Supabase+%E2%80%A2+Node.js+%E2%80%A2+Vercel;Open+to+collabs+%F0%9F%91%80" alt="Typing SVG" />
 
@@ -12,7 +32,7 @@
 
 ```typescript
 const manvith = {
-  role      : "Full Stack Developer/Student",
+  role      : "Full Stack Developer / Student",
   location  : "India 🇮🇳",
   building  : "animerealm.in",  // Anime 🎌
   stack     : ["React", "Next.js", "TypeScript", "Node.js", "Supabase"],
@@ -66,7 +86,7 @@ const manvith = {
 
 <div align="center">
 
-![Streak](https://nirzak-streak-stats.vercel.app/?user=Manvith911&theme=tokyonight&hide_border=true&background=0d1117&ring=00ffe0&fire=ff6b35&currStreakLabel=00ffe0&sideLabels=cdd9e5&dates=4a5568)
+![Streak](https://streak-stats.demolab.com?user=Manvith911&theme=tokyonight&hide_border=true&background=0d1117&ring=00ffe0&fire=ff6b35&currStreakLabel=00ffe0&sideLabels=cdd9e5&dates=4a5568)
 
 </div>
 
