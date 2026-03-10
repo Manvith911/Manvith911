@@ -118,13 +118,13 @@ drwxr-xr-x  manvith  staff   animerealm/
 
 <img height="160" src="https://streak-stats.demolab.com?user=Manvith911&theme=dark&hide_border=true&background=0d1117&ring=00FF41&fire=00c896&currStreakLabel=00FF41&sideLabels=888888&dates=555555&stroke=00FF4130" />
 
-<img height="160" src="https://github-readme-stats.vercel.app/api?username=Manvith911&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=00FF41&icon_color=00c896&text_color=cccccc&rank_icon=github" />
+<img height="160" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Manvith911&theme=github_dark" />
 
 </div>
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Manvith911&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=00FF41&text_color=cccccc&langs_count=6" />
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Manvith911&theme=github_dark" />
 
 </div>
 
@@ -166,7 +166,7 @@ $ curl -X GET "https://manvith.dev/contact"
 
 ```
 ╔═══════════════════════════════════════════════╗
-║  "😭 Code not Coding... Brain not Braining 😭"║
+║       "always building. never done."          ║
 ║                                  — manvith    ║
 ╚═══════════════════════════════════════════════╝
 ```
