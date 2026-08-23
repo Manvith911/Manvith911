@@ -1,22 +1,27 @@
-<!-- Header -->
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:0d1117&height=1&section=header" />
+  <img src="https://gh.crafter.run/Manvith911?theme=dark" alt="Manvith911@github" width="100%" />
 </div>
+
+<br/>
+
+<div align="center">
 
 ```
 ╔══════════════════════════════════════════════════════════════════╗
 ║                                                                  ║
-║   ███╗   ███╗ █████╗ ███╗   ██╗██╗   ██╗██╗████████╗██╗  ██╗     ║
-║   ████╗ ████║██╔══██╗████╗  ██║██║   ██║██║╚══██╔══╝██║  ██║     ║
-║   ██╔████╔██║███████║██╔██╗ ██║██║   ██║██║   ██║   ███████║     ║
-║   ██║╚██╔╝██║██╔══██║██║╚██╗██║╚██╗ ██╔╝██║   ██║   ██╔══██║     ║
-║   ██║ ╚═╝ ██║██║  ██║██║ ╚████║ ╚████╔╝ ██║   ██║   ██║  ██║     ║
-║   ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝  ╚═══╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝     ║
+║    ███╗   ███╗ █████╗ ███╗   ██╗██╗   ██╗██╗████████╗██╗  ██╗    ║
+║    ████╗ ████║██╔══██╗████╗  ██║██║   ██║██║╚══██╔══╝██║  ██║    ║
+║    ██╔████╔██║███████║██╔██╗ ██║██║   ██║██║   ██║   ███████║    ║
+║    ██║╚██╔╝██║██╔══██║██║╚██╗██║╚██╗ ██╔╝██║   ██║   ██╔══██║    ║
+║    ██║ ╚═╝ ██║██║  ██║██║ ╚████║ ╚████╔╝ ██║   ██║   ██║  ██║    ║
+║    ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝  ╚═══╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝    ║
 ║                                                                  ║
-║              student. builder. anime enjoyer.                    ║
+║             student  ·  builder  ·  anime enjoyer                ║
 ║                                                                  ║
 ╚══════════════════════════════════════════════════════════════════╝
 ```
+
+</div>
 
 <div align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=14&duration=3000&pause=1000&color=00FF41&center=true&vCenter=true&width=600&lines=%24+whoami+%E2%86%92+manvith%2C+full+stack+dev+%40+india;%24+cat+stack.txt+%E2%86%92+react+%7C+next+%7C+ts+%7C+supabase;%24+ls+projects%2F+%E2%86%92+animerealm.in+%F0%9F%8E%8C;%24+git+status+%E2%86%92+always+building%2C+never+done;%24+echo+%22open+to+collabs%22+%E2%86%92+true" />
@@ -29,16 +34,14 @@
 ## ❯ About me
 
 ```typescript
-  Name       : "Manvith",
-  Role       : ["Student", "Full Stack Developer"],
-  Location   : "India 🇮🇳",
-  Currently  : "Building animerealm.in 🎌",
-  Stack      : [
-    "React", "Next.js", "TypeScript",
-    "Node.js", "Supabase", "Vercel"
-  ],
-  Interests  : ["Anime", "Open Source", "Shipping stuff"],
-  OpenToWork : true, always// slide into issues/PRs anytime 👀
+const manvith = {
+  name      : "Manvith",
+  role      : ["Student", "Full Stack Developer"],
+  location  : "India 🇮🇳",
+  currently : "Building animerealm.in 🎌",
+  stack     : ["React", "Next.js", "TypeScript", "Node.js", "Supabase", "Vercel"],
+  interests : ["Anime", "Open Source", "Shipping stuff"],
+  openToWork: true, // slide into issues/PRs anytime 👀
 };
 
 export default manvith;
@@ -72,7 +75,7 @@ drwxr-xr-x  manvith  staff   animerealm/
 <tr>
 <td valign="top" width="33%">
 
-**// frontend**
+**`// frontend`**
 ```
   JavaScript
   TypeScript
@@ -85,7 +88,7 @@ drwxr-xr-x  manvith  staff   animerealm/
 </td>
 <td valign="top" width="33%">
 
-**// backend & db**
+**`// backend & db`**
 ```
   Node.js
   Supabase
@@ -96,7 +99,7 @@ drwxr-xr-x  manvith  staff   animerealm/
 </td>
 <td valign="top" width="33%">
 
-**// tooling**
+**`// tooling`**
 ```
   Git · GitHub
   Vite
@@ -117,12 +120,10 @@ drwxr-xr-x  manvith  staff   animerealm/
 <div align="center">
 
 <img height="160" src="https://streak-stats.demolab.com?user=Manvith911&theme=dark&hide_border=true&background=0d1117&ring=00FF41&fire=00c896&currStreakLabel=00FF41&sideLabels=888888&dates=555555&stroke=00FF4130" />
-
+&nbsp;
 <img height="160" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Manvith911&theme=github_dark" />
 
-</div>
-
-<div align="center">
+<br/><br/>
 
 <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Manvith911&theme=github_dark" />
 
@@ -145,7 +146,7 @@ drwxr-xr-x  manvith  staff   animerealm/
 <div align="center">
 
 ```sh
-$ curl -X GET "https://manvith.dev/contact"
+$ curl -X GET "https://manvith.is-a.dev/#contact"
 ```
 
 [![Gmail](https://img.shields.io/badge/gmail-manvithudupa073@gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white&labelColor=0d1117)](mailto:manvithudupa073@gmail.com)
