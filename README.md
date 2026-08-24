@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://gh.crafter.run/Manvith911?theme=dark" alt="Manvith911@github" width="100%" />
+  <img src="https://gh.crafter.run/Manvith911?theme=dark&cols=140" alt="Manvith911@github" width="100%" />
 </div>
 
 <br/>
